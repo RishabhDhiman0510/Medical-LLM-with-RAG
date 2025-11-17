@@ -1,89 +1,77 @@
-Medical LLM with RAG System
+# Medical LLM with RAG System
+
 A fine-tuned Apollo 2B language model enhanced with Retrieval-Augmented Generation (RAG) for medical question answering.
 
-Python
-License
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-Overview
+---
+
+## Overview
+
 This project implements a medical domain question answering system combining:
+- **Fine-tuned Apollo 2B Model** for medical understanding
+- **Retrieval-Augmented Generation (RAG)** with FAISS vector search
+- **7 Advanced Metrics** for comprehensive evaluation
+- **25 Medical Questions** across 10+ specialties
 
-Fine-tuned Apollo 2B Model for medical understanding
+---
 
-Retrieval-Augmented Generation (RAG) with FAISS vector search
+## Features
 
-7 Advanced Metrics for comprehensive evaluation
+**Core Capabilities:**
+- Fine-tuned Apollo 2B model for medical domain
+- Retrieval-Augmented Generation with FAISS
+- Confidence scoring for reliability estimation
+- Multi-source retrieval (local + web)
+- Semantic similarity validation
 
-25 Medical Questions across 10+ specialties
+**Testing & Evaluation:**
+- 7 advanced metrics (BLEU, ROUGE, BERTScore, etc.)
+- 25 comprehensive medical test questions
+- Automated evaluation suite
+- CSV and JSON exports
+- Visualization and correlation analysis
 
-Features
-Core Capabilities:
+**Medical Coverage:**
+- Cardiology (5 questions)
+- Endocrinology (5 questions)
+- Respiratory (5 questions)
+- Infectious Disease (5 questions)
+- Neurology (3 questions)
+- Psychiatry (2 questions)
 
-Fine-tuned Apollo 2B model for medical domain
+---
 
-Retrieval-Augmented Generation with FAISS
+## Performance
 
-Confidence scoring for reliability estimation
+| Metric | Score | Status |
+|--------|-------|--------|
+| BLEU Score | 0.15-0.25 | Excellent |
+| ROUGE-1 | 0.45-0.55 | Excellent |
+| ROUGE-L | 0.35-0.45 | Excellent |
+| Semantic Similarity | 0.75+ | Excellent |
+| BERTScore F1 | 0.75+ | Excellent |
+| Medical Entity Accuracy | 0.60-0.75 | Good |
 
-Multi-source retrieval (local + web)
+**Improvements (v1 → v3):**
+- BLEU: 5.9x improvement
+- ROUGE-1: 1.6x improvement
+- ROUGE-L: 1.9x improvement
+- Entity Accuracy: Bug fixed + improved
 
-Semantic similarity validation
+---
 
-Testing & Evaluation:
+## Installation
 
-7 advanced metrics (BLEU, ROUGE, BERTScore, etc.)
+**Prerequisites:**
+- Python 3.8 or higher
+- pip package manager
+- CUDA 11.8+ (optional, for GPU)
 
-25 comprehensive medical test questions
+**Setup:**
 
-Automated evaluation suite
-
-CSV and JSON exports
-
-Visualization and correlation analysis
-
-Medical Coverage:
-
-Cardiology (5 questions)
-
-Endocrinology (5 questions)
-
-Respiratory (5 questions)
-
-Infectious Disease (5 questions)
-
-Neurology (3 questions)
-
-Psychiatry (2 questions)
-
-Performance
-Metric	Score	Status
-BLEU Score	0.15-0.25	Excellent
-ROUGE-1	0.45-0.55	Excellent
-ROUGE-L	0.35-0.45	Excellent
-Semantic Similarity	0.75+	Excellent
-BERTScore F1	0.75+	Excellent
-Medical Entity Accuracy	0.60-0.75	Good
-Improvements (v1 → v3):
-
-BLEU: 5.9x improvement
-
-ROUGE-1: 1.6x improvement
-
-ROUGE-L: 1.9x improvement
-
-Entity Accuracy: Bug fixed + improved
-
-Installation
-Prerequisites:
-
-Python 3.8 or higher
-
-pip package manager
-
-CUDA 11.8+ (optional, for GPU)
-
-Setup:
-
-bash
+```bash
 # Clone repository
 git clone https://github.com/RishabhDhiman0510/Medical-LLM-with-RAG.git
 cd Medical-LLM-with-RAG
@@ -102,10 +90,15 @@ pip install -r requirements.txt
 
 # Download optional models
 python -m spacy download en_core_sci_lg
-Quick Start
-Basic Usage:
+```
 
-python
+---
+
+## Quick Start
+
+**Basic Usage:**
+
+```python
 from src.medical_rag_fixed import AdvancedMedicalRAG, AdvancedConfig
 
 config = AdvancedConfig()
@@ -116,15 +109,22 @@ response = rag_system.generate_with_confidence(question)
 
 print(f"Answer: {response['answer']}")
 print(f"Confidence: {response['confidence']:.1%}")
-Run Testing Suite:
+```
 
-python
+**Run Testing Suite:**
+
+```python
 from src.testing_suite_25_v3_final import ComprehensiveTestingSystem
 
 tester = ComprehensiveTestingSystem(rag_system)
 df_results, summary = tester.run_full_evaluation()
-Project Structure
-text
+```
+
+---
+
+## Project Structure
+
+```
 Medical-LLM-with-RAG/
 ├── README.md
 ├── requirements.txt
@@ -154,10 +154,15 @@ Medical-LLM-with-RAG/
     ├── SETUP.md
     ├── USAGE.md
     └── API_REFERENCE.md
-Usage Examples
-Example 1: Simple Question Answering
+```
 
-python
+---
+
+## Usage Examples
+
+**Example 1: Simple Question Answering**
+
+```python
 from src.medical_rag_fixed import AdvancedMedicalRAG, AdvancedConfig
 
 config = AdvancedConfig()
@@ -167,9 +172,11 @@ result = rag_system.generate_with_confidence(
     "How is hypertension diagnosed?"
 )
 print(result['answer'])
-Example 2: Batch Processing
+```
 
-python
+**Example 2: Batch Processing**
+
+```python
 questions = [
     "What are the symptoms of diabetes?",
     "What is the mechanism of ACE inhibitors?",
@@ -188,10 +195,15 @@ for question in questions:
 import pandas as pd
 df = pd.DataFrame(results)
 df.to_csv('results.csv', index=False)
-Testing & Evaluation
-Run Full Test Suite:
+```
 
-bash
+---
+
+## Testing & Evaluation
+
+**Run Full Test Suite:**
+
+```bash
 python -c "
 from src.testing_suite_25_v3_final import ComprehensiveTestingSystem
 from src.medical_rag_fixed import AdvancedMedicalRAG, AdvancedConfig
@@ -201,52 +213,38 @@ rag_system = AdvancedMedicalRAG(config)
 tester = ComprehensiveTestingSystem(rag_system)
 df_results, summary = tester.run_full_evaluation()
 "
-Output Files:
+```
 
-comprehensive_results_*.csv - All metrics
+**Output Files:**
+- `comprehensive_results_*.csv` - All metrics
+- `qa_results_*.csv` - Question-answer pairs
+- `summary_*.json` - Summary statistics
+- `metrics_distribution_*.png` - Visualizations
+- `correlation_heatmap_*.png` - Metric correlations
 
-qa_results_*.csv - Question-answer pairs
+**Metrics:**
+- **BLEU**: N-gram overlap (0-1)
+- **ROUGE-1**: Unigram overlap (0-1)
+- **ROUGE-L**: Longest common subsequence (0-1)
+- **Semantic Similarity**: Embedding-based similarity (0-1)
+- **BERTScore F1**: BERT-based semantic matching (0-1)
+- **Medical Entity Accuracy**: Entity Jaccard similarity (0-1)
 
-summary_*.json - Summary statistics
+---
 
-metrics_distribution_*.png - Visualizations
+## Model Details
 
-correlation_heatmap_*.png - Metric correlations
+**Fine-Tuning:**
+- Base Model: Apollo 2B
+- Dataset: Medical textbooks, clinical guidelines, Q&A pairs
+- Epochs: 3-5
+- Learning Rate: 2e-5
+- Batch Size: 8
+- Max Length: 512
+- Hardware: NVIDIA GPU (16GB VRAM)
 
-Metrics:
-
-BLEU: N-gram overlap (0-1)
-
-ROUGE-1: Unigram overlap (0-1)
-
-ROUGE-L: Longest common subsequence (0-1)
-
-Semantic Similarity: Embedding-based similarity (0-1)
-
-BERTScore F1: BERT-based semantic matching (0-1)
-
-Medical Entity Accuracy: Entity Jaccard similarity (0-1)
-
-Model Details
-Fine-Tuning:
-
-Base Model: Apollo 2B
-
-Dataset: Medical textbooks, clinical guidelines, Q&A pairs
-
-Epochs: 3-5
-
-Learning Rate: 2e-5
-
-Batch Size: 8
-
-Max Length: 512
-
-Hardware: NVIDIA GPU (16GB VRAM)
-
-RAG Architecture:
-
-text
+**RAG Architecture:**
+```
 Question
   ↓
 Embedding Model
@@ -260,18 +258,19 @@ Fine-tuned Apollo 2B → Generate response
 Confidence Scoring
   ↓
 Answer + Confidence
-Confidence Scoring factors:
+```
 
-Retrieval relevance scores
+**Confidence Scoring factors:**
+- Retrieval relevance scores
+- Model uncertainty estimates
+- Answer coherence metrics
+- Domain-specific validation
 
-Model uncertainty estimates
+---
 
-Answer coherence metrics
+## Configuration
 
-Domain-specific validation
-
-Configuration
-python
+```python
 config = AdvancedConfig(
     model_name="apollo-2b-medical",
     vector_db_type="faiss",
@@ -283,30 +282,123 @@ config = AdvancedConfig(
     use_corrections=True,
     use_medical_ner=True
 )
-Results
-Test Summary:
+```
 
-Total Questions: 25
+---
 
-Success Rate: 100%
+## Results
 
-Average Confidence: 75.3%
+**Test Summary:**
+- Total Questions: 25
+- Success Rate: 100%
+- Average Confidence: 75.3%
 
-Metric Performance:
-
-text
+**Metric Performance:**
+```
 BLEU Score:          Mean=0.20, Std=0.05
 ROUGE-1:             Mean=0.50, Std=0.06
 ROUGE-L:             Mean=0.40, Std=0.07
 Semantic Similarity: Mean=0.76, Std=0.08
 BERTScore F1:        Mean=0.76, Std=0.08
 Medical Entity Acc:  Mean=0.70, Std=0.12
-See test_results/ for detailed evaluation reports.
+```
 
+See `test_results/` for detailed evaluation reports.
 
-GitHub: @RishabhDhiman0510
+---
 
+## Docker Usage (Optional)
 
-🤝 Contribute improvements
+```bash
+# Build image
+docker build -t medical-llm-rag .
+
+# Run container
+docker run -it medical-llm-rag
+
+# Inside container
+python src/medical_rag_fixed.py
+```
+
+---
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| CUDA out of memory | Reduce batch size or use CPU mode |
+| FAISS index error | Check document format and disk space |
+| Low confidence | Verify retrieval quality and model weights |
+| Entity accuracy at 0.5 | Install spaCy: `python -m spacy download en_core_sci_lg` |
+
+---
+
+## Contributing
+
+Contributions welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Make changes and commit: `git commit -m "Add feature"`
+4. Push to branch: `git push origin feature/your-feature`
+5. Create Pull Request
+
+**Contribution areas:**
+- Additional medical test questions
+- Improved RAG retrieval strategies
+- Model performance optimization
+- New evaluation metrics
+- Documentation improvements
+
+---
+
+## References
+
+- Apollo 2B Model - Apollo AI
+- Retrieval-Augmented Generation - Lewis et al., 2020
+- FAISS - Facebook AI Similarity Search
+- Medical NER - scispaCy project
+- Metrics - NLTK, rouge-score, BERTScore
+
+---
+
+## License
+
+MIT License - See LICENSE file for details.
+
+Free use for commercial and private purposes with attribution.
+
+---
+
+## Author
+
+**Risha Dhiman**
+
+- GitHub: [@RishabhDhiman0510](https://github.com/RishabhDhiman0510)
+
+---
+
+## Support
+
+- **Issues:** [GitHub Issues](https://github.com/RishabhDhiman0510/Medical-LLM-with-RAG/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/RishabhDhiman0510/Medical-LLM-with-RAG/discussions)
+
+---
+
+## Acknowledgments
+
+- Open-source community
+- Medical dataset contributors
+- Fine-tuning and evaluation team
+
+---
+
+## Show Your Support
+
+If this project helped you:
+- ⭐ Star this repository
+- 🍴 Fork the project
+- 📢 Share with others
+- 🤝 Contribute improvements
 
 Thank you for using Medical LLM with RAG System! 🏥
