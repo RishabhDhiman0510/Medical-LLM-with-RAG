@@ -120,41 +120,6 @@ tester = ComprehensiveTestingSystem(rag_system)
 df_results, summary = tester.run_full_evaluation()
 ```
 
----
-
-## Project Structure
-
-```
-Medical-LLM-with-RAG/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── LICENSE
-│
-├── src/
-│   ├── medical_rag_fixed.py
-│   ├── testing_suite_25_v3_final.py
-│   ├── config.py
-│   └── utils.py
-│
-├── notebooks/
-│   ├── Model-Fine-Tuning.ipynb
-│   ├── AdvancedMedicalRAG.ipynb
-│   └── Testing_Results.ipynb
-│
-├── data/
-│   ├── medical_questions.txt
-│   └── test_results/
-│
-├── models/
-│   ├── apollo_2b_medical_finetuned/
-│   └── vector_index/
-│
-└── docs/
-    ├── SETUP.md
-    ├── USAGE.md
-    └── API_REFERENCE.md
-```
 
 ---
 
