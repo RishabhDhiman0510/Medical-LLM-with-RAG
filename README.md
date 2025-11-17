@@ -333,25 +333,6 @@ python src/medical_rag_fixed.py
 
 ---
 
-## Contributing
-
-Contributions welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Make changes and commit: `git commit -m "Add feature"`
-4. Push to branch: `git push origin feature/your-feature`
-5. Create Pull Request
-
-**Contribution areas:**
-- Additional medical test questions
-- Improved RAG retrieval strategies
-- Model performance optimization
-- New evaluation metrics
-- Documentation improvements
-
----
-
 ## References
 
 - Apollo 2B Model - Apollo AI
@@ -362,43 +343,9 @@ Contributions welcome! Please:
 
 ---
 
-## License
-
-MIT License - See LICENSE file for details.
-
-Free use for commercial and private purposes with attribution.
-
----
-
 ## Author
 
-**Risha Dhiman**
+**Rishabh Dhiman**
 
 - GitHub: [@RishabhDhiman0510](https://github.com/RishabhDhiman0510)
 
----
-
-## Support
-
-- **Issues:** [GitHub Issues](https://github.com/RishabhDhiman0510/Medical-LLM-with-RAG/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/RishabhDhiman0510/Medical-LLM-with-RAG/discussions)
-
----
-
-## Acknowledgments
-
-- Open-source community
-- Medical dataset contributors
-- Fine-tuning and evaluation team
-
----
-
-## Show Your Support
-
-If this project helped you:
-- ⭐ Star this repository
-- 🍴 Fork the project
-- 📢 Share with others
-- 🤝 Contribute improvements
-
-Thank you for using Medical LLM with RAG System! 🏥
